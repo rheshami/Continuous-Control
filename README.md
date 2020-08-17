@@ -67,5 +67,9 @@ The environment is considered solved, when the average (over 100 episodes) of th
 Follow the instructions in `Continuous_Control.ipynb` to get started with training your own agent!  
 
 ### Instalation
- - Unity M Agent](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Installation.md)
+ - [Unity M Agent](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Installation.md)
+ - [numpy](https://numpy.org/)
+ - ```
+    pip install -r requirements.txt
+   ```
 
