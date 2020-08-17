@@ -76,6 +76,8 @@ class Agent():
         return np.clip(action, -1, 1)
 
     def reset(self):
+        """Resets the noise.
+        """
         self.noise.reset()
 
     def learn(self, experiences, gamma):
@@ -151,7 +153,7 @@ class OUNoise:
     def sample(self):
         """Update internal state and return it as a noise sample."""
         x = self.state
-        dx = self.theta * (self.mu - x) + self.sigma * np.array([random.random() for i in range(len(x))])
+        dx = self.theta * (self.mu - x) + self.sigma * np.array([np.random.randn() for i in range(len(x))])
         self.state = x + dx
         return self.state
 

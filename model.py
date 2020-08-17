@@ -5,6 +5,11 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 def hidden_init(layer):
+    """Initialize hidden layers.
+        Params
+        ======
+        layer: hidden layer 
+    """
     fan_in = layer.weight.data.size()[0]
     lim = 1. / np.sqrt(fan_in)
     return (-lim, lim)
@@ -30,6 +35,7 @@ class Actor(nn.Module):
         self.bn = nn.BatchNorm1d(fc1_units)
 
     def reset_parameters(self):
+        """Resets parameters. """
         self.fc1.weight.data.uniform_(*hidden_init(self.fc1))
         self.fc2.weight.data.uniform_(*hidden_init(self.fc2))
         self.fc3.weight.data.uniform_(-3e-3, 3e-3)
@@ -64,6 +70,7 @@ class Critic(nn.Module):
         self.dropout = nn.Dropout(0.2)
         self.bn = nn.BatchNorm1d(fcs1_units)
     def reset_parameters(self):
+        """Resets parameters. """
         self.fcs1.weight.data.uniform_(*hidden_init(self.fcs1))
         self.fc2.weight.data.uniform_(*hidden_init(self.fc2))
         self.fc3.weight.data.uniform_(-3e-3, 3e-3)
