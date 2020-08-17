@@ -69,6 +69,7 @@ Follow the instructions in `Continuous_Control.ipynb` to get started with traini
 ### Instalation
  - [Unity M Agent](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Installation.md)
  - [numpy](https://numpy.org/)
+ - [pytorch](https://pytorch.org/get-started/locally/)
  - ```
     pip install -r requirements.txt
    ```
